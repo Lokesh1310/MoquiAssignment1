@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        require-authentication="anonymous-all">
+
+    <transition name="partyInfo">
+        <service-call name="create#Party"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="personInfo">
+        <service-call name="create#Person"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="organizationInfo">
+        <service-call name="create#Organization"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="partyRoleInfo">
+        <service-call name="create#PartyRole"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="contactMechInfo">
+        <service-call name="create#ContactMech"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="postalAddressInfo">
+        <service-call name="create#PostalAddress"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="telecomNumberInfo">
+        <service-call name="create#TelecomNumber"/>
+        <default-response url="."/>
+    </transition>
+
+    <transition name="partyContactMechInfo">
+        <service-call name="create#PartyContactMech"/>
+        <default-response url="."/>
+    </transition>
+
+
+    <widgets>
+    <container-dialog id="C1" button-text="Party">
+        <form-single name="F1" transition="partyInfo">
+            <auto-fields-entity entity-name="Party" field-type="edit" include="nonpk"/>
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+    </container-dialog>
+
+    <container-dialog id="C2" button-text="Person">
+        <form-single name="F2" transition="personInfo">
+            <auto-fields-entity entity-name="Person" field-type="edit" />
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+    </container-dialog>
+
+    <container-dialog id="C3" button-text="organization">
+        <form-single name="F3" transition="organizationInfo">
+            <auto-fields-entity entity-name="Organization" field-type="edit" />
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+    </container-dialog>
+
+    <container-dialog id="C4" button-text="partyRole">
+        <form-single name="F4" transition="partyRoleInfo">
+            <auto-fields-entity entity-name="PartyRole" field-type="edit" />
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+    </container-dialog>
+
+    <container-dialog id="C5" button-text="ContactMech">
+        <form-single name="F5" transition="contactMechInfo">
+            <auto-fields-entity entity-name="ContactMech" include="nonpk" field-type="edit" />
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+    </container-dialog>
+
+    <container-dialog id="C6" button-text="PostalAddress">
+        <form-single name="F6" transition="postalAddressInfo">
+            <auto-fields-entity entity-name="PostalAddress" field-type="edit" />
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+    </container-dialog>
+
+        <container-dialog id="C7" button-text="TelecomNumber">
+        <form-single name="F7" transition="telecomNumberInfo">
+            <auto-fields-entity entity-name="TelecomNumber" field-type="edit" />
+            <field name="submitButton">
+                <default-field title="Create">
+                    <submit/>
+                </default-field>
+            </field>
+        </form-single>
+        </container-dialog>
+
+
+        <container-dialog id="C8" button-text="PartyContactMech">
+            <form-single name="F8" transition="partyContactMechInfo">
+                <auto-fields-entity entity-name="PartyContactMech" field-type="edit" />
+                <field name="submitButton">
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+
+</widgets>
+
+
+</screen>
